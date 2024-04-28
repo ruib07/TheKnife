@@ -1,0 +1,324 @@
+<app-main-nav></app-main-nav>
+
+<div class="carousel">
+  <carousel>
+    <slide>
+      <img
+        src="assets/Carrousel-HomePage/Restaurante1.jpeg"
+        alt="first slide"
+        style="width: 100%; height: 65vh"
+      />
+    </slide>
+    <slide>
+      <img
+        src="assets/Carrousel-HomePage/Restaurante2.jpeg"
+        alt="second slide"
+        style="width: 100%; height: 65vh"
+      />
+    </slide>
+    <slide>
+      <img
+        src="assets/Carrousel-HomePage/Restaurante3.jpeg"
+        alt="third slide"
+        style="width: 100%; height: 65vh"
+      />
+    </slide>
+  </carousel>
+  <br />
+
+  <br /><br />
+
+  <div
+    class="pagination"
+    style="display: flex; justify-content: flex-end; margin-top: 10px"
+  >
+    <div class="pagination-buttons">
+      <button class="arrow-button" (click)="prevPage()">&#60;</button>
+      <button class="arrow-button" (click)="nextPage()">&#62;</button>
+    </div>
+  </div>
+
+  <br />
+
+  <div
+    class="restaurants-cards"
+    style="display: flex; flex-wrap: wrap; cursor: pointer"
+  >
+    <div
+      *ngFor="let restaurant of paginatedRestaurants"
+      class="restaurant-card1"
+      (click)="goToRestaurantPreview(restaurant.id)"
+    >
+      <div
+        class="restaurant-card11"
+        style="
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          border-radius: 10px;
+          background-color: rgba(204, 204, 204, 0.5);
+        "
+      >
+        <img [src]="restaurant.image" class="restaurant-img-icon" />
+        <p class="categoria-restaurante">{{ restaurant.category }}</p>
+        <b class="nome-do-restaurante">{{ restaurant.name }}</b>
+        <p class="morada-restaurante">{{ restaurant.location }}</p>
+        <p class="preo-mdio-x">Preço médio: {{ restaurant.averageprice }}€</p>
+      </div>
+    </div>
+  </div>
+
+  <br /><br />
+
+  <div>
+    <h1 class="titulo">Contactos</h1>
+
+    <div class="contactos-info" id="contacts">
+      <div class="div-84" style="color: #fff">
+        <div class="column-8" style="width: 46%">
+          <div
+            class="div-85 flex-start"
+            style="
+              background-color: #1b1b1b;
+              display: flex;
+              flex-grow: 1;
+              padding-top: 50px;
+              flex-direction: column;
+              width: 100%;
+            "
+          >
+            <div class="div-86">
+              <div class="div-87 flex-start">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/a1205f92057e6601b047718c039b866b8127e3ea8ad902fb5b2fb63c7e2eba4b?"
+                  class="img-15"
+                />
+                <div class="div-88" style="display: inline-flex">
+                  <h3 class="contacto ms-2">Morada</h3>
+                  <div class="div-90 ms-2" style="margin-top: -15px">
+                    Rua Francisco Pereira, 908<br />4564-767 Braga
+                  </div>
+                  <br />
+                </div>
+              </div>
+
+              <div class="div-91">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/c90328f394a06ac6c77fd3a4202748c49cf54bfbb2d4e160df96f2106e3da8d6?"
+                  class="img-16"
+                />
+                <div class="div-92" style="display: inline-flex">
+                  <h3 class="contacto ms-2">Email</h3>
+                  <div class="div-94 ms-2" style="margin-top: -15px">
+                    <p>geral&#64;theknife.pt</p>
+                  </div>
+                  <br />
+                </div>
+              </div>
+
+              <div class="div-95">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/1be2b311d3925c1f2adf2c744dbc6ce43a7ae7c0ed38be3d729c1848a1e49aa9?"
+                  class="img-17"
+                />
+                <div class="div-96" style="display: inline-flex">
+                  <h3 class="contacto ms-2">Contacto</h3>
+                  <div class="div-98 ms-2" style="margin-top: -15px">
+                    +351 253 453 565
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="div-99"
+                style="
+                  display: inline-flex;
+                  margin-top: 44px;
+                  padding-right: 63px;
+                  justify-content: space-between;
+                  gap: 16px;
+                "
+              >
+                <img src="../../assets/icons/fb-icon.png" />
+                <img src="../../assets/icons/instagram-icon.png" />
+                <img src="../../assets/icons/linkedin-icon.png" />
+              </div>
+            </div>
+            <br />
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.9657933924223!2d-8.481503424833257!3d41.439963871293244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24f7138c8f549b%3A0x355bd243ad2eeddf!2sIPCA%20Famalic%C3%A3o!5e0!3m2!1spt-PT!2spt!4v1703185793226!5m2!1spt-PT!2spt"
+              width="590"
+              height="450"
+              style="border: 0; border-radius: 0 0 10px 10px"
+              allowfullscreen=""
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="form-container" style="width: 54%; margin-left: 20px">
+          <form
+            #ContactsForm="ngForm"
+            class="div-100"
+            (ngSubmit)="sendContact(ContactsForm.value)"
+          >
+            <fieldset>
+              <div
+                class="div-101"
+                style="margin-bottom: 35px; width: 426px; max-width: 100%"
+              >
+                <h1 class="div-102" style="text-align: center; color: #000">
+                  Fale connosco
+                </h1>
+                <div class="div-103" style="text-align: center; color: #000">
+                  Preencha este formulário para nos contactar.
+                </div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="nome"
+                  placeholder="Nome *"
+                  required
+                  ngModel
+                />
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="email"
+                  placeholder="Email *"
+                  required
+                  ngModel
+                />
+
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  class="telemovel"
+                  placeholder="Telemóvel *"
+                  required
+                  ngModel
+                />
+
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="assunto"
+                  placeholder="Assunto *"
+                  required
+                  ngModel
+                />
+
+                <textarea
+                  id="message"
+                  name="message"
+                  class="mensagem"
+                  rows="12"
+                  placeholder="Mensagem *"
+                  required
+                  ngModel
+                ></textarea>
+                <button
+                  type="submit"
+                  class="botao"
+                  style="
+                    color: #fff;
+                    border-radius: 10px;
+                    background-color: #1b1b1b;
+                    align-self: center;
+                    margin-top: 31px;
+                    padding: 11px 28px 11px 23px;
+                    text-decoration: none;
+                  "
+                >
+                  Enviar
+                </button>
+                <div id="aboutus"></div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+
+    <h1 class="titulo">Sobre Nós</h1>
+    <div class="div-111">
+      <p>
+        O The Knife reúne as opiniões, notas e comentários de milhares de
+        clientes, para que saiba tudo sobre cada restaurante, e permite-lhe
+        reservar mesa online em segundos, a qualquer hora, com confirmação
+        imediata e sem perder tempo nem dinheiro com chamadas telefónicas.<br /><br />
+        Encontre os restaurantes ideais para reunir família e amigos, para
+        sofisticados almoços de negócios ou alegres refeições comemorativas,
+        para grupos e noites animadas ou para um jantar romântico a dois.<br />
+      </p>
+    </div>
+
+    <h1 class="titulo">É proprietário de um restaurante?</h1>
+    <div class="div-113">
+      <div class="div-114" style="display: inline-flex">
+        <div class="column-10">
+          <img
+            src="../../assets/HomePage-Images/RestaurantRegistrationImg.jpeg"
+          />
+        </div>
+        <div class="column-11" style="width: 61%; margin-left: 20px">
+          <div class="tabela" style="display: flex; flex-direction: column">
+            <h2 class="sub-titulo-2 mt-2">Registe o seu restaurante</h2>
+            <div class="texto">
+              Dê-nos mais informações sobre si e iremos entrar em contacto
+              consigo o mais breve possível.
+            </div>
+            <a
+              routerLink="/Authentication/restaurant-registration"
+              class="botao"
+              style="
+                color: #fff;
+                border-radius: 10px;
+                background-color: #1b1b1b;
+                align-self: center;
+                margin-top: 31px;
+                padding: 11px 28px 11px 23px;
+                text-decoration: none;
+              "
+              >Ver mais informações</a
+            >
+            <div class="linha"></div>
+
+            <h2 class="sub-titulo-2 mt-2">Já é cliente</h2>
+            <div class="texto">
+              Inicie sessão para conseguir gerir o seu restaurante no nosso
+              website.
+            </div>
+            <a
+              routerLink="/Authentication/login-responsibles"
+              class="botao"
+              style="
+                color: #fff;
+                border-radius: 10px;
+                background-color: #1b1b1b;
+                align-self: center;
+                margin-top: 31px;
+                padding: 11px 28px 11px 23px;
+                text-decoration: none;
+              "
+              >Iniciar Sessão</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+</div>

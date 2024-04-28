@@ -1,0 +1,26 @@
+.graph-info {
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+  background-color: #d9d9d933;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.graph-info h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.graph {
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}

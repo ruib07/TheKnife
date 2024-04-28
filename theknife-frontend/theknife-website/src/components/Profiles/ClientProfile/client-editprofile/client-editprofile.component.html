@@ -1,0 +1,71 @@
+<app-profiles-nav></app-profiles-nav>
+<app-userprofile-sidenav></app-userprofile-sidenav>
+
+<form #updateUser="ngForm" (ngSubmit)="updateUsersInfo(updateUser.value)">
+  <div class="responsible-info">
+    <div class="text-wrapper-3">
+      <h1>O Meu Perfil</h1>
+    </div>
+    <div class="nome-utilizador-2">
+      <h4 class="ms-5">Username</h4>
+    </div>
+    <div class="nome-utilizador">
+      <div class="text-wrapper-2">
+        <input
+          type="text"
+          class="input"
+          name="username"
+          [(ngModel)]="user.username"
+          required
+        />
+      </div>
+    </div>
+    <div class="email-label">
+      <h4 class="ms-5">Email</h4>
+    </div>
+    <div class="email-input">
+      <div class="email">
+        <input
+          type="email"
+          class="input"
+          name="email"
+          [(ngModel)]="user.email"
+          required
+        />
+      </div>
+    </div>
+    <div class="password-label">
+      <h4 class="ms-5">Palavra-Passe</h4>
+    </div>
+    <div class="password-input">
+      <div class="password">
+        <input
+          [type]="changetype ? 'password' : 'text'"
+          class="input"
+          name="password"
+          [(ngModel)]="user.password"
+          required
+        />
+        <span class="eyeicon me-5" (click)="viewpassworduser()">
+          <fa-icon [icon]="visible ? eyeIcon : eyeIconSlash"></fa-icon>
+        </span>
+      </div>
+    </div>
+    <div class="image-label">
+      <h4 class="ms-5">Imagem</h4>
+    </div>
+    <div class="image-input">
+      <div class="image">
+        <input
+          type="text"
+          class="input"
+          name="image"
+          [(ngModel)]="user.image"
+        />
+      </div>
+    </div>
+    <div class="submeter">
+      <button type="submit" class="text-wrapper">Alterar</button>
+    </div>
+  </div>
+</form>

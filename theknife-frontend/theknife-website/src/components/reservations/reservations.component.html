@@ -1,0 +1,80 @@
+<app-logins-nav></app-logins-nav>
+
+<div class="card-title">
+  <h1>A minha reserva</h1>
+</div>
+<div class="container">
+  <div class="grid">
+    <div class="card-container col-sm-9 col-md-7 col-lg-5">
+      <div class="card1 col-sm-9 col-md-7 col-lg-5">
+        <div class="card card-reservation my-5">
+          <div class="card-body">
+            <form
+              #ReservationForm="ngForm"
+              class="form-reservation"
+              (ngSubmit)="sendReservation(ReservationForm.value)"
+            >
+              <div class="inputs">
+                <div class="form-label-group">
+                  <input
+                    type="text"
+                    id="client_name"
+                    name="client_name"
+                    class="form-control"
+                    placeholder=" Nome e Apelido"
+                    required
+                    autofocus
+                    ngModel
+                  /><br />
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phonenumber"
+                    name="phonenumber"
+                    pattern="[2,6,9][0-9]{8}"
+                    placeholder="Nº Telefone"
+                    required
+                    ngModel
+                  /><br />
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="reservationdate"
+                    name="reservationdate"
+                    placeholder="Data"
+                    required
+                    ngModel
+                  /><br />
+                  <div class="hour-people">
+                    <input
+                      type="time"
+                      class="form-control"
+                      id="reservationtime"
+                      name="reservationtime"
+                      placeholder="Hora"
+                      required
+                      ngModel
+                    />
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="numberpeople"
+                      name="numberpeople"
+                      placeholder="Nº Pessoas"
+                      required
+                      ngModel
+                    />
+                  </div>
+                  <br /><br />
+                  <div class="botao-reservar">
+                    <button type="submit">Reservar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

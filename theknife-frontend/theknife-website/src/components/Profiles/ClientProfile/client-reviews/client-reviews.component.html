@@ -1,0 +1,47 @@
+<app-profiles-nav></app-profiles-nav>
+<app-userprofile-sidenav></app-userprofile-sidenav>
+
+<div class="container">
+  <div class="grid">
+    <div class="card-container">
+      <div class="card1 col-sm-9">
+        <div class="card card-reviews my-5">
+          <div class="card-body">
+            <div class="card-title">
+              <h1>Avaliações</h1>
+            </div>
+            <div *ngFor="let comment of pagedComments" class="avaliacao-card">
+              <div class="info">
+                <div class="review-delete">
+                  <div class="review ms-4 mt-2">{{ comment.review }}</div>
+                  <div class="icon">
+                    <span
+                      class="material-icons me-4"
+                      (click)="openDeleteConfirmationModal(comment)"
+                    >
+                      delete
+                    </span>
+                  </div>
+                </div>
+                <div class="date ms-4">
+                  {{ formatDate(comment.commentdate) }}
+                </div>
+              </div>
+              <div class="comment ms-2">{{ comment.comment }}</div>
+            </div>
+
+            <div class="pagination">
+              <pagination
+                [(ngModel)]="p"
+                [totalItems]="commentsData.length"
+                [itemsPerPage]="3"
+                (pageChanged)="pageChanged($event)"
+              >
+              </pagination>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

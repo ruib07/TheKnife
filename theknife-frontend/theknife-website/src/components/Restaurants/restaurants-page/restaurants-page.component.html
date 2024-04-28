@@ -1,0 +1,150 @@
+<app-main-nav></app-main-nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div ngbDropdown class="dropdown left-filters ms-5">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown" ngbDropdown>
+        <button
+          class="btn btn-secondary dropdown-toggle ms-3"
+          id="navbarDropdownTime"
+          ngbDropdownToggle
+        >
+          <span class="material-icons align-middle mr-1"> schedule </span> Hora
+        </button>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdownTime">
+          <div class="filtrar-hora">
+            <input
+              type="time"
+              class="form-control"
+              [(ngModel)]="selectedTime"
+            />
+            <button class="btn btn-secondary" (click)="filterByHour()">
+              Filtrar
+            </button>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown" ngbDropdown>
+        <button
+          class="btn btn-secondary dropdown-toggle ms-3"
+          id="navbarDropdownPeople"
+          ngbDropdownToggle
+        >
+          <span class="material-icons align-middle mr-1"> person_outline </span>
+          Pessoas
+        </button>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdownPeople">
+          <div class="filtrar-capacidade">
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="numberOfPeople"
+            />
+            <button class="btn btn-secondary" (click)="filterByCapacity()">
+              Filtrar
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="middle-filters justify-content-center">
+    <ul class="navbar-nav ml-auto">
+      <div class="search-clear">
+        <input
+          class="input-search"
+          type="search"
+          placeholder="Nome do restaurante"
+          (change)="pesquisar($event)"
+          aria-label="Search"
+        />
+        <button class="btn btn-secondary" (click)="clearFilters()">
+          Limpar
+        </button>
+      </div>
+    </ul>
+  </div>
+
+  <div class="right-filters me-5">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown" ngbDropdown>
+        <button
+          class="btn btn-secondary dropdown-toggle me-3"
+          id="navbarDropdownPrice"
+          ngbDropdownToggle
+        >
+          <span class="material-icons align-middle mr-1"> euro </span> Preço
+        </button>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdownPrice">
+          <button class="btn btn-link" (click)="sortRestaurantsPriceDesc()">
+            Maior-Menor
+          </button>
+          <button class="btn btn-link" (click)="sortRestaurantsPriceAsc()">
+            Menor-Maior
+          </button>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown" ngbDropdown>
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          id="navbarDropdownOrderBy"
+          ngbDropdownToggle
+        >
+          <span class="material-icons align-middle mr-1"> toc </span> Ordenar
+          Por
+        </button>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdownOrderBy">
+          <button class="btn btn-link" (click)="sortRestaurantsNameAZ()">
+            A-Z</button
+          ><br />
+          <button class="btn btn-link" (click)="sortRestaurantsNameZA()">
+            Z-A
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br /><br />
+
+<div *ngFor="let restaurant of restaurants" class="restaurants-cards">
+  <div class="restaurant-card" (click)="goToRestaurantPreview(restaurant.id)">
+    <img [src]="restaurant.image" class="restaurant-image" />
+    <div class="restaurant-details">
+      <p class="category">{{ restaurant.category }}</p>
+      <p class="name">{{ restaurant.name }}</p>
+      <p class="location">Morada: {{ restaurant.location }}</p>
+      <p class="openingdays">
+        Horário de funcionamento: {{ restaurant.openingdays }}
+      </p>
+      <p class="hours">
+        Horas de funcionamento: {{ restaurant.openinghours }} -
+        {{ restaurant.closinghours }}
+      </p>
+      <p class="average-price">Preço médio: {{ restaurant.averageprice }}€</p>
+      <p class="description">{{ restaurant.desc }}</p>
+    </div>
+  </div>
+</div>
+<br /><br />
+
+<hr />
+<br />
+
+<div class="app-registration">
+  <div class="app ms-5">
+    <h4>App TheKnife</h4>
+    <p>Brevemente disponível</p>
+  </div>
+  <div class="restaurant-registration me-5">
+    <h4>Interessado em registar o seu restaurante?</h4>
+    <div class="restaurantregistration-content">
+      <a routerLink="/Authentication/restaurant-registration"
+        ><b>Clique aqui</b></a
+      >
+      <p>para registar o seu restaurante</p>
+    </div>
+  </div>
+</div>

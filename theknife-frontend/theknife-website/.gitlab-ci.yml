@@ -1,0 +1,119 @@
+image: node:20.9.0
+
+stages:
+  - build
+  - test
+  - review-stage
+  - staging-deploy
+  - production-deploy
+  - production-tests
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+variables:
+  STAGING_DOMAIN: theknife-staging.surge.sh
+  PRODUCTION_DOMAIN: theknife-prod.surge.sh
+
+build website:
+  stage: build
+  only:
+    - master
+    - merge_requests
+  script:
+    - echo $CI_COMMIT_SHORT_SHA
+    - npm install
+    - npm install -g @angular/cli
+    - ng build
+  artifacts:
+    paths:
+      - ./dist
+
+test artifacts:
+  image: alpine
+  stage: test
+  only:
+    - master
+    - merge_requests
+  script:
+    - grep -q "Enviar" ./src/components/home/home.component.html
+
+test website:
+  stage: test
+  only:
+    - master
+    - merge_requests
+  script:
+    - npm install
+    - npm install -g @angular/cli
+    - ng build
+    - npm install -g http-server
+    - http-server ./dist -p 4200 -s &
+    - sleep 5
+    - curl "http://localhost:4200"
+
+review deploy:
+  stage: review-stage
+  only:
+    - merge_requests
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: http://theknife-$CI_ENVIRONMENT_SLUG.surge.sh
+    on_stop: review stop
+  script:
+    - npm install --global surge
+    - surge --project ./dist --domain theknife-$CI_ENVIRONMENT_SLUG.surge.sh
+
+review stop:
+  stage: review-stage
+  only:
+    - merge_requests
+  variables:
+    GIT_STRATEGY: none
+  when: manual
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    action: stop
+  script:
+    - npm install --global surge
+    - surge teardown theknife-$CI_ENVIRONMENT_SLUG.surge.sh
+
+staging deploy:
+  stage: staging-deploy
+  environment:
+    name: staging
+    url: http://$STAGING_DOMAIN
+  only:
+    - master
+  script:
+    - npm install --global surge
+    - surge --project ./dist --domain $STAGING_DOMAIN
+
+production deploy:
+  stage: production-deploy
+  environment:
+    name: production
+    url: http://$PRODUCTION_DOMAIN
+  only:
+    - master
+  when: manual
+  allow_failure: false
+  before_script:
+    - echo "Start deploy"
+    - npm install --global surge
+  script:
+    - surge --project ./dist --domain $PRODUCTION_DOMAIN
+
+production test:
+  stage: production-tests
+  image: alpine
+  only:
+    - master
+  script:
+    - apk update
+    - apk add curl
+    - sleep 5
+    - curl "http://$PRODUCTION_DOMAIN"
+    - curl "http://$PRODUCTION_DOMAIN"

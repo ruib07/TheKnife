@@ -1,0 +1,151 @@
+ .navbar {
+   margin-top: -25px;
+   border-radius: 25px;
+   width: 100%;
+   justify-content: space-between;
+ }
+
+ .btn-link {
+   text-decoration: none;
+   color: #000;
+ }
+
+ .dropdown-toggle {
+  border-radius: 10px;
+ }
+
+.filtrar-hora,
+.filtrar-capacidade {
+  display: inline-flex;
+}
+
+.filtrar-hora,
+.filtrar-capacidade input {
+  border-radius: 7px 0 0 7px;
+}
+
+.filtrar-hora,
+.filtrar-capacidade button {
+  border-radius: 0 10px 10px 0;
+}
+
+.search-clear {
+  display: inline-flex;
+}
+
+.search-clear button {
+  border-radius: 0 10px 10px 0;
+  height: 41px;
+}
+
+.input-search {
+  width: 400px;
+  height: 41px;
+  border-radius: 7px 0 0 7px;
+  margin-right: 0;
+  border: 1px solid #000;
+}
+
+.input-search::placeholder,
+.input-search:only-of-type {
+  text-align: center;
+}
+
+.search-clear button,
+.search-clear .input-search {
+  margin: 0;
+}
+
+.restaurants-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.restaurant-card {
+  background-color: #f2f2f2;
+  display: flex;
+  max-width: 840px;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.restaurant-image {
+  width: 44%;
+  height: auto;
+  margin-right: 15px;
+  border-radius: 8px 0 0 8px;
+}
+
+.restaurant-details {
+  flex-grow: 1;
+}
+
+.category,
+.name,
+.location,
+.average-price,
+.openingdays,
+.hours,
+.description {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.category {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.location,
+.average-price,
+.openingdays,
+.hours,
+.description {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+hr {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.app-registration {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app {
+  text-align: start;
+}
+
+.app,
+.restaurantregistration h4 {
+  font-weight: bold;
+}
+
+.restaurant-registration {
+  text-align: start;
+}
+
+.restaurantregistration-content {
+  display: inline-flex;
+}
+
+.restaurantregistration-content a {
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.restaurantregistration-content b {
+  color: #FF0000;
+}

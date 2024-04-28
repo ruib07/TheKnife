@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.col-sm-9 {
+  width: 550px;
+}
+
+.form {
+  width: 90%;
+  height: 3.5vh !important;
+  border-radius: 7px;
+}
+
+.inputs {
+  text-align: center !important;
+}
+
+::placeholder {
+  color: #000;
+  font-size: 14px;
+}
+
+::-ms-input-placeholder {
+  color: #000;
+}
+
+.card {
+  background-color: #1B1B1B !important;
+  border-radius: 15px;
+  box-shadow: none !important;
+}
+
+.card-signin {
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-signin .card-title {
+  font-weight: bolder;
+  font-size: 18px;
+  color: #fff;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+  flex: 1;
+}
+
+.form-signin {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.form-signin .btn {
+  font-size: 14px;
+  font-weight: normal;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.forgotpassword-link,
+.forgotpassword-p {
+  color: #fff;
+}
+
+.forgot-remember {
+  text-align: start;
+}
+
+.eyeicon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+hr {
+  margin-top: -25px;
+  margin-bottom: 25px;
+  color: #ffff;
+  width: 96%;
+}

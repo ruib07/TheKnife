@@ -1,0 +1,42 @@
+.dashboard {
+  margin-top: 200px;
+  color: #000;
+  width: 250px;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  top: 0;
+}
+
+.dashboard div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dashboard a {
+  text-decoration: none;
+  color: #000;
+}
+
+.dashboard button {
+  background-color: #1B1B1B;
+  color: #fff;
+  width: 80px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.dashboard h3,
+.dashboard hr {
+  margin: 0;
+  padding: 5px;
+}
+
+.dashboard hr {
+  width: 170px;
+  margin-left: auto;
+  margin-right: auto;
+}

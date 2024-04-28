@@ -1,0 +1,53 @@
+<app-logins-nav></app-logins-nav>
+
+<div class="container">
+  <div class="grid">
+    <div class="card-container col-sm-9 col-md-7 col-lg-5">
+      <div class="card1 col-sm-9 col-md-7 col-lg-5">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Entrar na sua conta</h5><br>
+            <form #LoginUsersForm="ngForm" class="form-signin" (ngSubmit)="LoginUsers(LoginUsersForm.value)">
+              <div class="inputs">
+                <div class="form-label-group">
+                  <input type="email" id="email" name="email" class="form-control" placeholder=" Email" required
+                    autofocus ngModel />
+                </div>
+                <div class="form-label-group">
+                  <input [type]="changetype ? 'password' : 'text'" id="password" name="password" class="form-control"
+                    placeholder=" Password" required ngModel />
+                  <span class="eyeicon" (click)="viewpassworduser()">
+                    <fa-icon [icon]="visible ? eyeIcon : eyeIconSlash"></fa-icon>
+                  </span>
+                </div>
+                <div class="forgot-remember ms-2">
+                  <div class="forgotpassword">
+                    <a class="forgotpassword-link" routerLink="/Recover-Passwords/recoverpasswordemail-user">
+                      <p class="forgotpassword-p">
+                        Esqueceste-te da tua password?
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                <br />
+                <button id="login-users" class="btn btn-lg btn-light btn-block" type="submit">
+                  Iniciar Sessão
+                </button>
+              </div>
+            </form>
+            <br><br><br>
+            <hr class="ms-2">
+            <div class="card text-center">
+              <h5 class="card-title">Ainda não tem conta?<br>Registe-se agora!</h5><br>
+              <form class="form-signin">
+                <div class="texts-createacc">
+                  <button class="btn btn-lg btn-light btn-block" type="submit" routerLink="../../Authentication/register"
+                    [routerLinkActive]="'active'">Criar Conta</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

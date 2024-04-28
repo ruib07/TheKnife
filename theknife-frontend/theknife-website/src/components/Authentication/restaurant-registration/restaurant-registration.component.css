@@ -1,0 +1,114 @@
+body {
+  background-color: #f2f2f2;
+}
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.card {
+  border-radius: 25px;
+  background-color: #d9d9d933;
+  border-style: none;
+}
+
+.card input,
+.card textarea {
+  border-style: none;
+}
+
+.form-line1,
+.form-line2,
+.form-line3,
+.form-line4 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-line1 input,
+.form-line2 input,
+.form-line3 input,
+.restaurant-desc textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.owner-name,
+.owner-password,
+.owner-phone,
+.ntables,
+.owner-email,
+.restaurant-name,
+.restaurant-phone,
+.restaurant-address,
+.restaurant-category,
+.restaurant-img,
+.capacity,
+.openingdays,
+.averageprice,
+.openinghours,
+.closinghours,
+.restaurant-desc textarea {
+  margin-bottom: 7px;
+}
+
+.owner-name,
+.owner-email {
+  width: 420px;
+}
+
+.owner-phone,
+.restaurant-phone {
+  width: 250px;
+}
+
+.restaurant-name,
+.owner-password {
+
+  width: 460px;
+}
+
+.restaurant-address {
+  width: 520px;
+}
+
+.ntables {
+  width: 180px;
+}
+
+.capacity {
+  width: 250px;
+}
+
+.restaurant-img {
+  width: 420px;
+}
+
+.openingdays {
+  width: 350px;
+}
+
+.averageprice {
+  width: 140px;
+}
+
+.restaurant-desc textarea {
+  height: 30vh;
+}
+
+.btn-enviar {
+  text-align: center;
+}
+
+.btn-enviar button {
+  box-shadow: 5px 5px 5px lightgray;
+  border-radius: 10px;
+}
+
+.eyeicon {
+  position: absolute;
+  top: 40px;
+  right: 350px;
+  cursor: pointer;
+}

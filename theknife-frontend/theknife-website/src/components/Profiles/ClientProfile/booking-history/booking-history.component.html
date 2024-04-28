@@ -1,0 +1,46 @@
+<app-profiles-nav></app-profiles-nav>
+<app-userprofile-sidenav></app-userprofile-sidenav>
+
+<div class="booking-info">
+  <div class="text-wrapper-3">
+    <h1>Histórico de reservas</h1>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Nome</th>
+            <th>Restaurante</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reservation of pagedReservations">
+            <td>{{ formatDate(reservation.reservationdate) }}</td>
+            <td>{{ reservation.reservationtime }}</td>
+            <td>{{ reservation.client_name }}</td>
+            <td>{{ reservation.restaurant_name }}</td>
+            <td class="icon">
+              <span
+                class="material-icons"
+                (click)="openDeleteConfirmationModal(reservation)"
+              >
+                delete
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div class="pagination">
+        <pagination
+          [(ngModel)]="p"
+          [totalItems]="reservationData.length"
+          [itemsPerPage]="6"
+          (pageChanged)="pageChanged($event)"
+        ></pagination>
+      </div>
+    </div>
+  </div>
+</div>

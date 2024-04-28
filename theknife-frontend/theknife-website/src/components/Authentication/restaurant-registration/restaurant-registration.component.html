@@ -1,0 +1,223 @@
+<app-logins-nav></app-logins-nav>
+
+<div class="restaurant-registrationtitle">
+  <h2>Registar o seu restaurante</h2>
+</div>
+
+<div class="card p-3">
+  <div class="card-body">
+    <form
+      #registerRestaurantForm="ngForm"
+      (ngSubmit)="sendRestaurantRegistration(registerRestaurantForm.value)"
+    >
+      <div class="form-line1">
+        <div class="owner-name ms-2">
+          <input
+            type="text"
+            class="form-control"
+            id="flname"
+            name="flname"
+            placeholder="Primeiro e Último Nome..."
+            required
+            ngModel
+          />
+        </div>
+        <div class="owner-password">
+          <input
+            [type]="changetype ? 'password' : 'text'"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="Password..."
+            required
+            ngModel
+          />
+          <span class="eyeicon" (click)="viewpassword()">
+            <fa-icon [icon]="visible ? eyeIcon : eyeIconSlash"></fa-icon>
+          </span>
+        </div>
+        <div class="owner-phone me-2">
+          <input
+            type="tel"
+            class="form-control"
+            id="phone"
+            name="phone"
+            pattern="[2,6,9][0-9]{8}"
+            placeholder="Telemóvel..."
+            required
+            ngModel
+          />
+        </div>
+      </div>
+      <br />
+
+      <div class="form-line2">
+        <div class="owner-email ms-2">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Email..."
+            required
+            ngModel
+          />
+        </div>
+        <div class="restaurant-name ms-1">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Nome do restaurante..."
+            required
+            ngModel
+          />
+        </div>
+        <div class="restaurant-phone me-2">
+          <input
+            type="tel"
+            class="form-control"
+            id="rphone"
+            name="rphone"
+            pattern="[2,3,9][0-9]{8}"
+            placeholder="Telefone do Restaurante..."
+            required
+            ngModel
+          />
+        </div>
+      </div>
+      <br />
+
+      <div class="form-line3">
+        <div class="restaurant-address ms-2">
+          <input
+            type="text"
+            class="form-control"
+            id="location"
+            name="location"
+            placeholder="Morada do restaurante..."
+            required
+            ngModel
+          />
+        </div>
+        <div class="restaurant-category">
+          <input
+            type="text"
+            class="form-control"
+            id="category"
+            name="category"
+            placeholder="Categoria..."
+            required
+            ngModel
+          />
+        </div>
+        <div class="restaurant-img me-2">
+          <input
+            type="text"
+            class="form-control"
+            id="image"
+            name="image"
+            placeholder="URL da Imagem"
+            required
+            ngModel
+          />
+        </div>
+      </div>
+      <br />
+
+      <div class="form-line4">
+        <div class="ntables ms-2">
+          <input
+            type="number"
+            class="form-control"
+            id="numberoftables"
+            name="numberoftables"
+            placeholder="Nº Mesas..."
+            required
+            ngModel
+          />
+        </div>
+        <div class="capacity">
+          <input
+            type="number"
+            class="form-control"
+            id="capacity"
+            name="capacity"
+            placeholder="Capacidade de Pessoas..."
+            required
+            ngModel
+          />
+        </div>
+        <div class="openingdays">
+          <input
+            type="text"
+            class="form-control"
+            id="openingdays"
+            name="openingdays"
+            placeholder="Dias de Funcionamento..."
+            required
+            ngModel
+          />
+        </div>
+        <div class="averageprice">
+          <input
+            type="number"
+            class="form-control"
+            id="averageprice"
+            name="averageprice"
+            placeholder="Preço Médio..."
+            required
+            ngModel
+          />
+        </div>
+        <div class="openinghours">
+          <input
+            type="time"
+            class="form-control"
+            id="openinghours"
+            name="openinghours"
+            placeholder="Hora de Abertura..."
+            required
+            ngModel
+          />
+        </div>
+        <div class="closinghours me-2">
+          <input
+            type="time"
+            class="form-control"
+            id="closinghours"
+            name="closinghours"
+            placeholder="Hora de Abertura..."
+            required
+            ngModel
+          />
+        </div>
+      </div>
+      <br />
+
+      <div class="restaurant-desc ms-2 me-2">
+        <textarea
+          type="text"
+          class="form-control"
+          id="desc"
+          name="desc"
+          placeholder="Descrição do restaurante..."
+          required
+          ngModel
+        ></textarea>
+      </div>
+      <br />
+
+      <div class="btn-enviar">
+        <button
+          type="submit"
+          id="send-restaurant-registration"
+          class="btn btn-dark"
+        >
+          Submeter</button
+        ><br />
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,152 @@
+.rectangle-icon {
+  width: 100%;
+  max-width: 100%;
+  height: 540px;
+  display: block;
+}
+
+.restaurant-page-card {
+  background-color: rgba(229, 229, 229, 0.2);
+  border-radius: 0 0 25px 25px;
+  padding: 30px;
+}
+
+.category {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #333;
+}
+
+.location {
+  font-size: 16px;
+  color: #000;
+  font-weight: bolder;
+  text-decoration: none;
+  display: block;
+  margin-top: 5px;
+}
+
+.averageprice {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.openingdays {
+  font-size: 16px;
+  color: #555;
+  display: inline-flex;
+  margin-top: 10px;
+}
+
+.desc {
+  font-size: 16px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.reservar {
+  background-color: #1B1B1B;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.calendario {
+  position: absolute;
+  margin-top: -400px;
+  right: 19.52%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.ngb-dp-day-disabled {
+  color: #999;
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+.reservar,
+.maisavaliacao, 
+.escreveravalicao {
+  background-color: #1B1B1B;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.avaliacao {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #000;
+  text-align: center;
+}
+
+.avaliacao-card {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.review {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.reviewpost {
+  top: 15px;
+  right: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.date {
+  font-size: 14px;
+  color: #000;
+}
+
+.comment {
+  padding: 15px;
+  font-size: 16px;
+  color: #000;
+}

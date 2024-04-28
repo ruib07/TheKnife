@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+.responsible-info {
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+  background-color: #d9d9d933;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.image-banner {
+  width: 100%;
+  text-align: center;
+}
+
+input {
+  width: 70%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 7px;
+}
+
+.text-wrapper-3,
+.nome-restaurante,
+.category-input,
+.n-tele-input,
+.morada-input,
+.numberoftables-input,
+.capacity-input,
+.openingdays-input,
+.openinghours-input,
+.closinghours-input,
+.averageprice-input,
+.image-input,
+.desc-input,
+.submeter {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.nome-restaurante-label,
+.category-label,
+.n-telefone-label,
+.morada-label,
+.numberoftables-label,
+.capacity-label,
+.openingdays-label,
+.openinghours-label,
+.closinghours-label,
+.averageprice-label,
+.image-label,
+.desc-label {
+  margin-left: 84px !important;
+}
+
+.restaurant-image {
+  text-align: center;
+}
+
+.nome-restaurante-label,
+.submeter {
+  margin-top: 30px;
+}
+
+.submeter .text-wrapper {
+  background-color: #1B1B1B;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 30%;
+  margin: auto;
+}
+
+h1 {
+  margin: 0;
+  font-weight: bold;
+}
+
+h4 {
+  margin: 0;
+  font-weight: 500;
+}

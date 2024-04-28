@@ -1,0 +1,188 @@
+<app-profiles-nav></app-profiles-nav>
+<app-responsiblesprofile-sidenav></app-responsiblesprofile-sidenav>
+
+<form
+  #updateRestaurant="ngForm"
+  (ngSubmit)="updateRestaurantInfo(updateRestaurant.value)"
+>
+  <div class="responsible-info">
+    <div class="text-wrapper-3">
+      <h1>Perfil do Restaurante</h1>
+    </div>
+    <div class="restaurant-image">
+      <img [src]="restaurant.image" width="100%" height="340" />
+    </div>
+    <div class="nome-restaurante-label">
+      <h4 class="ms-5">Nome do Restaurante</h4>
+    </div>
+    <div class="nome-restaurante">
+      <div class="text-wrapper-2">
+        <input
+          type="text"
+          class="input"
+          name="name"
+          [(ngModel)]="restaurant.name"
+          required
+        />
+      </div>
+    </div>
+    <div class="category-label">
+      <h4 class="ms-5">Categoria</h4>
+    </div>
+    <div class="category-input">
+      <div class="category">
+        <input
+          type="text"
+          class="input"
+          name="category"
+          [(ngModel)]="restaurant.category"
+          required
+        />
+      </div>
+    </div>
+    <div class="n-telefone-label">
+      <h4 class="ms-5">Número de Telefone</h4>
+    </div>
+    <div class="n-tele-input">
+      <div class="phone">
+        <input
+          type="tel"
+          class="input"
+          pattern="[2,6,9][0-9]{8}"
+          name="rphone"
+          [(ngModel)]="restaurant.rphone"
+          required
+        />
+      </div>
+    </div>
+    <div class="morada-label">
+      <h4 class="ms-5">Morada</h4>
+    </div>
+    <div class="morada-input">
+      <div class="morada">
+        <input
+          type="text"
+          class="input"
+          name="location"
+          [(ngModel)]="restaurant.location"
+          required
+        />
+      </div>
+    </div>
+    <div class="numberoftables-label">
+      <h4 class="ms-5">Número de Mesas</h4>
+    </div>
+    <div class="numberoftables-input">
+      <div class="numberoftables">
+        <input
+          type="number"
+          class="input"
+          name="numberoftables"
+          [(ngModel)]="restaurant.numberoftables"
+          required
+        />
+      </div>
+    </div>
+    <div class="capacity-label">
+      <h4 class="ms-5">Capacidade</h4>
+    </div>
+    <div class="capacity-input">
+      <div class="capacity">
+        <input
+          type="number"
+          class="input"
+          name="capacity"
+          [(ngModel)]="restaurant.capacity"
+          required
+        />
+      </div>
+    </div>
+    <div class="openingdays-label">
+      <h4 class="ms-5">Horário de Funcionamento</h4>
+    </div>
+    <div class="openingdays-input">
+      <div class="openingdays">
+        <input
+          type="text"
+          class="input"
+          name="openingdays"
+          [(ngModel)]="restaurant.openingdays"
+          required
+        />
+      </div>
+    </div>
+    <div class="openinghours-label">
+      <h4 class="ms-5">Hora de Abertura</h4>
+    </div>
+    <div class="openinghours-input">
+      <div class="openinghours">
+        <input
+          type="time"
+          class="input"
+          name="openinghours"
+          [(ngModel)]="restaurant.openinghours"
+          required
+        />
+      </div>
+    </div>
+    <div class="closinghours-label">
+      <h4 class="ms-5">Hora de Fecho</h4>
+    </div>
+    <div class="closinghours-input">
+      <div class="closinghours">
+        <input
+          type="time"
+          class="input"
+          name="closinghours"
+          [(ngModel)]="restaurant.closinghours"
+          required
+        />
+      </div>
+    </div>
+    <div class="averageprice-label">
+      <h4 class="ms-5">Preço Médio</h4>
+    </div>
+    <div class="averageprice-input">
+      <div class="averageprice">
+        <input
+          type="number"
+          class="input"
+          name="averageprice"
+          [(ngModel)]="restaurant.averageprice"
+          required
+        />
+      </div>
+    </div>
+    <div class="image-label">
+      <h4 class="ms-5">Imagem</h4>
+    </div>
+    <div class="image-input">
+      <div class="image">
+        <input
+          type="text"
+          class="input"
+          name="image"
+          [(ngModel)]="restaurant.image"
+          required
+        />
+      </div>
+    </div>
+    <div class="desc-label">
+      <h4 class="ms-5">Descrição</h4>
+    </div>
+    <div class="desc-input">
+      <div class="desc">
+        <input
+          type="text"
+          class="input"
+          name="desc"
+          [(ngModel)]="restaurant.desc"
+          required
+        />
+      </div>
+    </div>
+    <div class="submeter">
+      <button type="submit" class="text-wrapper">Submeter</button>
+    </div>
+  </div>
+</form>

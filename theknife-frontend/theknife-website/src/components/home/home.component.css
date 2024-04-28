@@ -1,0 +1,171 @@
+h1,
+h2 {
+  text-align: center;
+}
+
+.restaurant-img-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 139px;
+  object-fit: cover;
+}
+
+.nome-do-restaurante,
+.morada-restaurante,
+.preo-mdio-x,
+.categoria-restaurante {
+  position: absolute;
+  left: 7px;
+}
+
+.nome-do-restaurante {
+  top: 173px;
+  font-size: 20px;
+}
+
+.morada-restaurante {
+  top: 211px;
+  font-size: 12px;
+}
+
+.preo-mdio-x {
+  top: 314px;
+  font-size: 16px;
+}
+
+.categoria-restaurante {
+  top: 148px;
+}
+
+.restaurant-card1 {
+  position: relative;
+  width: 21.6%;
+  height: 346px;
+  text-align: left;
+  font-size: 14px;
+  color: #000;
+  margin-right: 44px;
+}
+
+.pagination-buttons button {
+  margin-left: 10px;
+}
+
+.arrow-button {
+  background-color: #f0f0f0;
+  font-size: 32px;
+  color: black;
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.div-83,
+.div-84,
+.div-85,
+.div-88,
+.div-92,
+.div-96,
+.div-98,
+.div-99 {
+  display: flex;
+  justify-content: space-between;
+  gap: 7px;
+  border-radius: 10px;
+}
+
+.div-88,
+.div-92,
+.div-96,
+.div-98 {
+  display: flex;
+  margin-top: 4px;
+  flex-grow: 1;
+  flex-basis: 0%;
+  flex-direction: column;
+}
+
+.column-8,
+.column-10,
+.column-11,
+.form-container,
+.div-100,
+.div-101 {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+}
+
+.div-85,
+.div-100,
+.div-111,
+.div-113,
+.div-114 {
+  align-self: stretch;
+}
+
+.div-100 {
+  background-color: #fff;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 42px 60px;
+}
+
+.nome,
+.email,
+.telemovel,
+.assunto,
+.mensagem {
+  color: rgba(0, 0, 0, 0.58);
+  border-radius: 5px;
+  background-color: rgba(204, 204, 204, 0.5);
+  align-self: stretch;
+  margin-top: 31px;
+  padding: 10px 0;
+  border-style: none;
+}
+
+.div-111 {
+  color: #000;
+  text-align: justify;
+  background-color: #fff;
+  align-self: center;
+  width: 100%;
+  max-width: 1164px;
+  justify-content: center;
+  padding: 19px 12px;
+}
+
+.div-113 {
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.column-10 img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.linha {
+  background-color: rgba(0, 0, 0, 0.5);
+  align-self: stretch;
+  margin-top: 24px;
+  height: 1px;
+}
+
+.sub-titulo-2,
+.texto {
+  color: #000;
+  align-self: center;
+  white-space: nowrap;
+}

@@ -1,0 +1,92 @@
+<app-profiles-nav></app-profiles-nav>
+<app-responsiblesprofile-sidenav></app-responsiblesprofile-sidenav>
+
+<form
+  #updateResponsible="ngForm"
+  (ngSubmit)="updateResponsavelInfo(updateResponsible.value)"
+>
+  <div class="responsible-info">
+    <div class="text-wrapper-3">
+      <div class="responsibleimage ms-2">
+        <img [src]="responsavel.image" />
+      </div>
+      <h1 class="ms-5">O Meu Perfil</h1>
+    </div>
+    <div class="nome-utilizador-2">
+      <h4 class="ms-5">Nome e Apelido</h4>
+    </div>
+    <div class="nome-utilizador">
+      <div class="text-wrapper-2">
+        <input
+          type="text"
+          class="input"
+          name="flname"
+          [(ngModel)]="responsavel.flname"
+          required
+        />
+      </div>
+    </div>
+    <div class="email-label">
+      <h4 class="ms-5">Email</h4>
+    </div>
+    <div class="email-input">
+      <div class="email">
+        <input
+          type="email"
+          class="input"
+          name="email"
+          [(ngModel)]="responsavel.email"
+          required
+        />
+      </div>
+    </div>
+    <div class="n-telefone-label">
+      <h4 class="ms-5">Número de Telefone</h4>
+    </div>
+    <div class="n-tele-input">
+      <div class="phone">
+        <input
+          type="tel"
+          class="input"
+          pattern="[2,6,9][0-9]{8}"
+          name="phone"
+          [(ngModel)]="responsavel.phone"
+          required
+        />
+      </div>
+    </div>
+    <div class="password-label">
+      <h4 class="ms-5">Palavra-Passe</h4>
+    </div>
+    <div class="password-input">
+      <div class="password">
+        <input
+          [type]="changetype ? 'password' : 'text'"
+          class="input"
+          name="password"
+          [(ngModel)]="responsavel.password"
+          required
+        />
+        <span class="eyeicon" (click)="viewpassword()">
+          <fa-icon [icon]="visible ? eyeIcon : eyeIconSlash"></fa-icon>
+        </span>
+      </div>
+    </div>
+    <div class="image-label">
+      <h4 class="ms-5">Imagem</h4>
+    </div>
+    <div class="image-input">
+      <div class="image">
+        <input
+          type="text"
+          class="input"
+          name="image"
+          [(ngModel)]="responsavel.image"
+        />
+      </div>
+    </div>
+    <div class="submeter">
+      <button type="submit" class="text-wrapper">Submeter</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,53 @@
+<app-profiles-nav></app-profiles-nav>
+<app-userprofile-sidenav></app-userprofile-sidenav>
+
+<div class="container">
+  <div class="grid">
+    <div class="card-container">
+      <div class="card1 col-sm-9">
+        <div class="card card-restaurantfav my-5">
+          <div class="card-body">
+            <div class="card-title">
+              <h1>Restaurantes Favoritos</h1>
+            </div>
+            <div
+              *ngFor="let restaurant of pagedRestaurants"
+              class="restaurants-cards"
+            >
+              <div
+                class="restaurant-card"
+                (click)="goToRestaurantPreview(restaurant.id)"
+              >
+                <img [src]="restaurant.image" class="restaurant-image" />
+                <div class="restaurant-details">
+                  <p class="category">{{ restaurant.category }}</p>
+                  <p class="name">{{ restaurant.name }}</p>
+                  <p class="location">Morada: {{ restaurant.location }}</p>
+                  <p class="openingdays">
+                    Horário de funcionamento: {{ restaurant.openingdays }}
+                  </p>
+                  <p class="hours">
+                    Horas de funcionamento: {{ restaurant.openinghours }} -
+                    {{ restaurant.closinghours }}
+                  </p>
+                  <p class="average-price">
+                    Preço médio: {{ restaurant.averageprice }}€
+                  </p>
+                  <p class="description">{{ restaurant.desc }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="pagination">
+              <pagination
+                [(ngModel)]="p"
+                [totalItems]="restaurantsData.length"
+                [itemsPerPage]="3"
+                (pageChanged)="pageChanged($event)"
+              ></pagination>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

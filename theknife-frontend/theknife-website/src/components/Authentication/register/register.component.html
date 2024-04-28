@@ -1,0 +1,45 @@
+<app-logins-nav></app-logins-nav>
+<div class="container">
+  <div class="grid">
+    <div class="card-container col-sm-9 col-md-7 col-lg-5">
+      <div class="card1 col-sm-9 col-md-7 col-lg-5">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Registar a sua conta</h5><br>
+            <form #RegisterUsersForm="ngForm" class="form-signin" (ngSubmit)="RegisterUsers(RegisterUsersForm.value)">
+
+              <div class="inputs">
+                <div class="form-label-group">
+                  <input type="text" id="username" name="username" class="form-control" placeholder=" Username" required ngModel>
+                </div>
+                <div class="form-label-group">
+                  <input type="email" id="email" name="email" class="form-control" placeholder=" Email" required ngModel>
+                </div>
+                <div class="form-label-group">
+                  <input [type]="changetype ? 'password' : 'text'" id="password" name="password" class="form-control"
+                    placeholder=" Password" required ngModel />
+                  <span class="eyeicon" (click)="viewpasswordregister()">
+                    <fa-icon [icon]="visible ? eyeIcon : eyeIconSlash"></fa-icon>
+                  </span>
+                </div>
+                <br>
+                <button id="register-users" class="btn btn-lg btn-light btn-block" type="submit">Criar Conta</button>
+              </div>
+            </form>
+            <br><br><br>
+            <hr class="ms-2">
+            <div class="card text-center">
+              <h5 class="card-title">Já tem conta no nosso Website?<br>Inicie Sessão agora</h5><br>
+              <form class="form-signin">
+                <div class="texts-createacc">
+                  <button class="btn btn-lg btn-light btn-block" type="submit" routerLink="../../Authentication/login"
+                    [routerLinkActive]="'active'">Iniciar Sessão</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
